@@ -1,0 +1,22 @@
+[user]
+  name = Stefan Schwoegler
+  email = stefan@cryp7.net
+  signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDjv7G6rJAEX7YTfkA1tIGXTV+7eM8phGJXGyQcGl3+fq7UdytpePlt+2i5V8HSH0OSZfuLX6xPRMl7syKIv7E2wxu0Tc6Ex4zHGwC8rWMlRcBQVL13Nms2vtxXi1L0/iAibjpR5hDw2Bo818fHH1GVdWJrcweN3VyLeudiip88KcXePHK5uesnunUqWlytUVzSz4CyVXSalyaVJAFCHz4Hh50bAr0aygTMnX09BybMJMq8niGFG2jAMIrk4CgjRu4u6+llrzVgkzs3WytNl12/F8LghspYsuRSKSdpOUDqGougmxyPUzMcuJ4tXIEX4pFbli/oBWDr8poqQPzp4gCEAa2NGbYoejiHKVgP5wBrlXk7de9YJGDLxhxOV3m6YIBnbvPUgTHjRv56lZZDs6ZnBBBa8XMRWCfc/hfj6XnbM6z/rbA4/nTvZVlBCYavauS5+dN2YL4c/m2jZRE/TOXOjjUXj0gsl0/cAq5fT/xZsSc63S12hylx9KXuHtOMNMaF8jiYYKU0tVsY6iSS7EmTG7PJad9zNuF6YP0vzWlwiyYm3Gidts4hwc0xxh8abt6BBF9ciE4ARQadLo2LCXEhe75IyBp3CF71AisBbPy9+9sf5ICfE7jqJWbNbZN+K1m0sqcxul1sG4fwcOMfBCQT5egKuY2d0B/nHkSr0XiDYQ==
+
+[gpg]
+  format = ssh
+
+[commit]
+  gpgsign = true
+
+[include]
+  path = ~/.gitconfig.gpg.ssh
+
+[push]
+  default = current
+
+[core]
+  excludesfile = ~/.gitignore
+
+[init]
+  defaultBranch = master
