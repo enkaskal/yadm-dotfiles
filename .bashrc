@@ -60,9 +60,10 @@ fi
 export no_proxy=localhost,127.0.0.1,169.254.169.254
 #export http_proxy=127.0.0.1:8080
 #export https_proxy=127.0.0.1:8080
-export HISTSIZE=100000
+export HISTSIZE=-1
+export HISTFILESIZE=-1
+#export HISTCONTROL=ignorespace
 export HISTTIMEFORMAT="%Y%m%d %T "
-export HISTCONTROL=ignorespace
 export PS1="[\u@\h \w]\$ "
 export EDITOR=vim
 export XOA_URL=op://range/XOA/website
