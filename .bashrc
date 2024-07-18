@@ -102,6 +102,7 @@ alias yoda='git push --force'
 alias burp="java -Djsse.enableSNIExtension=false -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias burp2="java -Djsse.enableSNIExtension=true -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias xmr="monero-wallet-cli --config-file ${HOME}/.monero-wallet-cli.conf --wallet-file"
+alias shrug='echo -n ¯\\_\(ツ\)_/¯ | pbcopy'
 
 #maven
 export MAVEN_OPTS="${JAVA_OPTS}"
