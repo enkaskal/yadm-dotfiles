@@ -72,6 +72,7 @@ export XOA_PASSWORD=op://range/XOA/password
 export ANSIBLE_XO_HOST=op://range/XOA/host
 export ANSIBLE_XO_USER=op://range/XOA/username
 export ANSIBLE_XO_PASSWORD=op://range/XOA/password
+export VAULT_ADDR=op://range/vault/website
 
 # ALIASES
 alias rebash='source $HOME/.bashrc'
@@ -97,11 +98,12 @@ alias gca!='git add . && git commit --amend --no-edit'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gp!='git push'
-alias yoda='git push --force'
+alias yoda='git push --force --all'
 alias burp="java -Djsse.enableSNIExtension=false -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias burp2="java -Djsse.enableSNIExtension=true -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias xmr="monero-wallet-cli --config-file ${HOME}/.monero-wallet-cli.conf --wallet-file"
 alias shrug='echo -n ¯\\_\(ツ\)_/¯ | pbcopy'
+alias tableflip='echo -n \(╯°□°\)╯︵ ┻━┻ | pbcopy'
 
 #maven
 export MAVEN_OPTS="${JAVA_OPTS}"
