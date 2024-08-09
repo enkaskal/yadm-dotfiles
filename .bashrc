@@ -51,6 +51,7 @@ else
   alias pbpaste='xclip -selection clipboard -o'
   #alias pbcopy='xsel --clipboard --input'
   #alias pbpaste='xsel --clipboard --output'
+  alias batstat='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 
   # java
   export JAVA_OPTS="-Xmx4g -Dhttp.nonProxyHosts='localhost|127.*|[::1]' -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=8080 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=8080"
@@ -101,7 +102,7 @@ alias gp!='git push'
 alias yoda='git push --force --all'
 alias burp="java -Djsse.enableSNIExtension=false -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias burp2="java -Djsse.enableSNIExtension=true -jar -Xmx4096m ${HOME}/bin/burp.jar"
-alias xmr="monero-wallet-cli --config-file ${HOME}/.monero-wallet-cli.conf --wallet-file"
+alias xmr="monero-wallet-cli --config-file ${HOME}/.bitmonero/monero-wallet-cli.conf --wallet-file"
 alias shrug='echo -n ¯\\_\(ツ\)_/¯ | pbcopy'
 alias tableflip='echo -n \(╯°□°\)╯︵ ┻━┻ | pbcopy'
 
@@ -116,6 +117,7 @@ export PYENV_ROOT=${HOME}/.pyenv
 
 #go
 export GOPATH=${HOME}/src/golang
+export GOPROXY=direct
 
 #########
 # PATHs #
@@ -148,7 +150,7 @@ fi
 
 if [ -d "${OVFTOOL_HOME}" ]; then
     export PATH=${PATH}:${OVFTOOL_HOME}
-  fi
+fi
 
 # docker rmi -f $(docker images -f "dangling=true" -q)
 #export PATH="/usr/local/opt/openssl@1.1/bin:$PATH
