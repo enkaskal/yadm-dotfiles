@@ -23,3 +23,20 @@
 
 [init]
   defaultBranch = master
+
+[sendemail]
+  smtpserver = smtp.gmail.com
+  smtpuser = stefan@cryp7.net
+  smtpencryption = tls
+  smtpserverport = 587
+  annotate = yes
+
+[alias]
+  co = checkout
+  ca = commit -av
+  aa = add --all
+  s = status
+  d = diff
+  sho = show --show-signature
+  caa = commit --amend -av
+  l = log --show-signature
