@@ -51,7 +51,12 @@ else
   alias pbpaste='xclip -selection clipboard -o'
   #alias pbcopy='xsel --clipboard --input'
   #alias pbpaste='xsel --clipboard --output'
+
+  # mainly for ref...cause i'll never remember this
   alias batstat='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
+
+  # systemd :/
+  alias journalctl='journalctl --no-pager'
 
   # java
   export JAVA_OPTS="-Xmx4g -Dhttp.nonProxyHosts='localhost|127.*|[::1]' -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=8080 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=8080"
@@ -100,6 +105,8 @@ alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gp!='git push'
 alias yoda='git push --force --all'
+alias ma='mutt_oauth2.py -av ${HOME}/.mutt/mutt_oauth2.tokens'
+alias m='mutt'
 alias burp="java -Djsse.enableSNIExtension=false -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias burp2="java -Djsse.enableSNIExtension=true -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias xmr="monero-wallet-cli --config-file ${HOME}/.bitmonero/monero-wallet-cli.conf --wallet-file"

@@ -1,3 +1,16 @@
+[alias]
+  co = checkout
+  ca = commit -av
+  aa = add --all
+  a = add
+  s = status
+  d = diff
+  l = log --show-signature
+  dc = diff --cached
+  sho = show --show-signature
+  caa = commit --amend -av
+  se = send-email
+
 [user]
   name = Stefan Schwoegler
   email = stefan@cryp7.net
@@ -25,18 +38,6 @@
   defaultBranch = master
 
 [sendemail]
-  smtpserver = smtp.gmail.com
-  smtpuser = stefan@cryp7.net
-  smtpencryption = tls
-  smtpserverport = 587
+  smtpServer = sendgmail
+  smtpServerOption = -sender=stefan@cryp7.net
   annotate = yes
-
-[alias]
-  co = checkout
-  ca = commit -av
-  aa = add --all
-  s = status
-  d = diff
-  sho = show --show-signature
-  caa = commit --amend -av
-  l = log --show-signature

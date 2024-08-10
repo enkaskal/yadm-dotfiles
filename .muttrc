@@ -1,0 +1,69 @@
+# user config
+set realname  = "Stefan Schwoegler"
+set from = "stefan@cryp7.net"
+
+# receiving config
+set imap_user = "stefan@cryp7.net"
+set imap_authenticators="oauthbearer:xoauth2"
+set imap_oauth_refresh_command="mutt_oauth2.py ${HOME}/.mutt/mutt_oauth2.tokens"
+bind index G imap-fetch-mail
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+set mbox="imaps://imap.gmail.com/[Gmail]/All Mail"
+set trash = "imaps://imap.gmail.com/[Gmail]/Bin"
+
+# sending config
+set smtp_authenticators=${imap_authenticators}
+set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
+set sendmail = "sendgmail -sender=stefan@cryp7.net"
+set copy = no # disable mutt's storing of all sent mail
+
+# caching
+set message_cachedir = ${HOME}/.mutt/cache/messages
+set message_cache_clean = no
+set header_cache = ${HOME}/.mutt/cache/headers
+
+# index config
+set mark_old = no # don't mark mail O on exit (i.e. disable N->O flagging)
+set sort_aux=reverse-last-date-received
+set index_format="%4C %Z %{%b %d} %-25.25L (%?l?%4l&%4c?) %s"
+
+# macros
+macro index,pager A "<save-message>=[Gmail]/All%20Mail<enter>"
+
+# pager
+auto_view text/html
+
+# colors
+
+### the following list of expressions are taken from:
+### https://raw.githubusercontent.com/jessfraz/dockerfiles/master/mutt/.mutt/mutt-patch-highlighting.muttrc
+# Patch syntax highlighting
+##color   normal  white           default
+color   body    brightwhite     default         ^[[:space:]].*
+color   body    yellow          default         ^(diff).*
+#color   body    white           default         ^[\-\-\-].*
+#color   body    white           default         ^[\+\+\+].*
+#color   body    green           default         ^[\+].*
+#color   body    red             default         ^[\-].*
+#color   body    brightblue      default         [@@].*
+color   body    brightwhite     default         ^(\s).*
+color   body    cyan            default         ^(Signed-off-by).*
+color   body    cyan            default         ^(Docker-DCO-1.1-Signed-off-by).*
+color   body    brightwhite     default         ^(Cc)
+color   body    yellow          default         "^diff \-.*"
+color   body    brightwhite     default         "^index [a-f0-9].*"
+color   body    brightblue      default         "^---$"
+color   body    white           default         "^\-\-\- .*"
+color   body    white           default         "^[\+]{3} .*"
+color   body    green           default         "^[\+][^\+]+.*"
+color   body    red             default         "^\-[^\-]+.*"
+color   body    brightblue      default         "^@@ .*"
+color   body    green           default         "LGTM"
+color   body    brightmagenta   default         "-- Commit Summary --"
+color   body    brightmagenta   default         "-- File Changes --"
+color   body    brightmagenta   default         "-- Patch Links --"
+color   body    green           default         "^Merged #.*"
+color   body    red             default         "^Closed #.*"
+color   body    brightblue      default         "^Reply to this email.*"
