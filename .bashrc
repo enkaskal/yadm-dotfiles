@@ -123,13 +123,14 @@ export RBENV_ROOT=${HOME}/.rbenv
 export PYENV_ROOT=${HOME}/.pyenv
 
 #go
-export GOPATH=${HOME}/src/golang
+export GOPATH=${HOME}
 export GOPROXY=direct
 
 #########
 # PATHs #
 #########
-export PATH=${HOME}/.local/bin:\
+export PATH=${HOME}/bin:\
+${HOME}/.local/bin:\
 ${RBENV_ROOT}/bin:\
 ${PYENV_ROOT}/bin:\
 ${GOPATH}/bin:\
