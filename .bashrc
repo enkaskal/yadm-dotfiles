@@ -40,11 +40,6 @@ if [ "$system_type" = "Darwin" ]; then
   #hashicorp
   export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
-  #1p-cli
-  export OP_HOME=${HOME}/.config/op
-  if [ -d "${OP_HOME}" ]; then
-    source ${OP_HOME}/plugins.sh
-  fi
 else
   alias ls='ls --color'
   alias pbcopy='xclip -selection clipboard'
@@ -79,6 +74,12 @@ export ANSIBLE_XO_HOST=op://range/XOA/host
 export ANSIBLE_XO_USER=op://range/XOA/username
 export ANSIBLE_XO_PASSWORD=op://range/XOA/password
 export VAULT_ADDR=op://range/vault/website
+export RESTIC_REPOSITORY=op://range/restic/repo
+export RESTIC_PASSWORD=op://range/restic/password
+export BORG_REPO=op://range/BorgBase/repo
+export BORG_PASSPHRASE=op://range/BorgBase/passphrase
+export AWS_ACCESS_KEY_ID="op://Private/AWSAccessKey-enkaskal/access key id"
+export AWS_SECRET_ACCESS_KEY="op://Private/AWSAccessKey-enkaskal/secret access key"
 
 # ALIASES
 alias rebash='source $HOME/.bashrc'
@@ -112,6 +113,14 @@ alias burp2="java -Djsse.enableSNIExtension=true -jar -Xmx4096m ${HOME}/bin/burp
 alias xmr="monero-wallet-cli --config-file ${HOME}/.bitmonero/monero-wallet-cli.conf --wallet-file"
 alias shrug='echo -n ¯\\_\(ツ\)_/¯ | pbcopy'
 alias tableflip='echo -n \(╯°□°\)╯︵ ┻━┻ | pbcopy'
+alias ansible='op run --no-masking -- ansible'
+alias ansible-playbook='op run --no-masking -- ansible-playbook'
+alias vault='op run --no-masking -- vault'
+alias tf='op run --no-masking -- terraform'
+alias tfa='op run --no-masking -- terraform apply'
+alias restic='op run --no-masking -- restic'
+alias borg='op run --no-masking -- borg'
+alias aws='op run --no-masking -- aws'
 
 #maven
 export MAVEN_OPTS="${JAVA_OPTS}"
@@ -159,6 +168,12 @@ fi
 if [ -d "${OVFTOOL_HOME}" ]; then
     export PATH=${PATH}:${OVFTOOL_HOME}
 fi
+
+##1p-cli
+#export OP_HOME=${HOME}/.config/op
+#if [ -f "${OP_HOME}/plugins.sh" ]; then
+#  source ${OP_HOME}/plugins.sh
+#fi
 
 # docker rmi -f $(docker images -f "dangling=true" -q)
 #export PATH="/usr/local/opt/openssl@1.1/bin:$PATH

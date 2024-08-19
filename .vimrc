@@ -1,6 +1,4 @@
 syntax on
-" WSL is doing some funky shit with the signs column (gitgutter)
-set background=dark
 highlight! link SignColumn LineNr
 filetype plugin indent on
 set nocompatible
@@ -11,10 +9,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
-"set backspace=2
 set backspace=indent,eol,start
 set autowrite
-"set statusline+=%{gutentags#statusline()}
+set statusline+=%{gutentags#statusline()}
 "set tags=tags;/
 set laststatus=2
 set noerrorbells visualbell
