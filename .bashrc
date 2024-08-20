@@ -78,8 +78,8 @@ export RESTIC_REPOSITORY=op://range/restic/repo
 export RESTIC_PASSWORD=op://range/restic/password
 export BORG_REPO=op://range/BorgBase/repo
 export BORG_PASSPHRASE=op://range/BorgBase/passphrase
-export AWS_ACCESS_KEY_ID="op://Private/AWSAccessKey-enkaskal/access key id"
-export AWS_SECRET_ACCESS_KEY="op://Private/AWSAccessKey-enkaskal/secret access key"
+export AWS_ACCESS_KEY_ID="op://Private/qxg732dw7hp6nqgj5ufffmmzyq/access key id"
+export AWS_SECRET_ACCESS_KEY="op://Private/qxg732dw7hp6nqgj5ufffmmzyq/secret access key"
 
 # ALIASES
 alias rebash='source $HOME/.bashrc'
