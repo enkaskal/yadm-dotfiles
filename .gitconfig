@@ -41,3 +41,5 @@
   smtpServer = sendgmail
   smtpServerOption = -sender=stefan@cryp7.net
   annotate = yes
+[pull]
+	rebase = true
