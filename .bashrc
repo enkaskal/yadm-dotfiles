@@ -76,10 +76,22 @@ export ANSIBLE_XO_PASSWORD=op://range/XOA/password
 export VAULT_ADDR=op://range/vault/website
 export RESTIC_REPOSITORY=op://range/restic/repo
 export RESTIC_PASSWORD=op://range/restic/password
-export BORG_REPO=op://range/BorgBase/repo
-export BORG_PASSPHRASE=op://range/BorgBase/passphrase
+export BORG_REPO=op://range/borg/repo
+export BORG_PASSPHRASE=op://range/borg/password
+
+# aws s3
 export AWS_ACCESS_KEY_ID="op://Private/qxg732dw7hp6nqgj5ufffmmzyq/access key id"
 export AWS_SECRET_ACCESS_KEY="op://Private/qxg732dw7hp6nqgj5ufffmmzyq/secret access key"
+
+# backblaze-b2
+# replication is crazy slow via s3-compatible API, and i'm not sure about their whole
+# lifecycle policy they're doing as i turned it off, (keep only last file) and it's still versioning!
+#export AWS_ACCESS_KEY_ID="op://Private/cloq7txxk2k4ymrbgjfaqkyywe/access key id"
+#export AWS_SECRET_ACCESS_KEY="op://Private/cloq7txxk2k4ymrbgjfaqkyywe/secret access key"
+# actually replication is fuct using their API too ¯\_(ツ)_/¯
+export B2_ACCOUNT_ID="op://Private/cloq7txxk2k4ymrbgjfaqkyywe/access key id"
+export B2_ACCOUNT_KEY="op://Private/cloq7txxk2k4ymrbgjfaqkyywe/secret access key"
+
 
 # ALIASES
 alias rebash='source $HOME/.bashrc'
@@ -115,11 +127,12 @@ alias shrug='echo -n ¯\\_\(ツ\)_/¯ | pbcopy'
 alias tableflip='echo -n \(╯°□°\)╯︵ ┻━┻ | pbcopy'
 alias ansible='op run --no-masking -- ansible'
 alias ansible-playbook='op run --no-masking -- ansible-playbook'
+alias ap='ansible-playbook'
 alias vault='op run --no-masking -- vault'
 alias tf='op run --no-masking -- terraform'
 alias tfa='op run --no-masking -- terraform apply'
 alias restic='op run --no-masking -- restic'
-alias borg='op run --no-masking -- borg'
+alias borg='op run --no-masking -- borg --iec'
 alias aws='op run --no-masking -- aws'
 
 #maven
