@@ -132,7 +132,7 @@ alias vault='op run --no-masking -- vault'
 alias tf='op run --no-masking -- terraform'
 alias tfa='op run --no-masking -- terraform apply'
 alias restic='op run --no-masking -- restic'
-alias borg='op run --no-masking -- borg --iec'
+alias borg='op run --no-masking -- borg --iec --verbose --progress'
 alias aws='op run --no-masking -- aws'
 
 #maven
