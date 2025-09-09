@@ -78,6 +78,11 @@ export RESTIC_REPOSITORY=op://range/restic/repo
 export RESTIC_PASSWORD=op://range/restic/password
 export BORG_REPO=op://range/borg/repo
 export BORG_PASSPHRASE=op://range/borg/password
+export PKR_VAR_remote_host=op://range/XOA/xenserver
+export PKR_VAR_remote_username="op://range/mvc523eha3uyfi32jheb6v54ka/username"
+export PKR_VAR_remote_password="op://range/mvc523eha3uyfi32jheb6v54ka/password"
+export PKR_VAR_sr_iso_name="op://range/XOA/packer-sr-iso-name"
+export PKR_VAR_sr_name="op://range/XOA/packer-sr-name"
 
 # aws s3
 export AWS_ACCESS_KEY_ID="op://Private/qxg732dw7hp6nqgj5ufffmmzyq/access key id"
@@ -131,6 +136,7 @@ alias ap='ansible-playbook'
 alias vault='op run --no-masking -- vault'
 alias tf='op run --no-masking -- terraform'
 alias tfa='op run --no-masking -- terraform apply'
+alias packer='op run --no-masking -- packer'
 alias restic='op run --no-masking -- restic'
 alias borg='op run --no-masking -- borg --iec --verbose --progress'
 alias aws='op run --no-masking -- aws'

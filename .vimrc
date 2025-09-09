@@ -34,7 +34,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 "Plug 'vim-scripts/ctags.vim'
 "Plug 'ludovicchabant/vim-gutentags'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-dispatch'
 Plug 'mileszs/ack.vim'
 "Plug 'Shougo/neocomplete.vim'
