@@ -1,5 +1,8 @@
 # .bashrc
 
+# set locales
+export LC_TIME=C
+
 # get system type
 system_type=$(uname -s)
 
