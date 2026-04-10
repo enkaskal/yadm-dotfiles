@@ -26,8 +26,16 @@ set header_cache = ${HOME}/.mutt/cache/headers
 
 # index config
 set mark_old = no # don't mark mail O on exit (i.e. disable N->O flagging)
-set sort_aux=reverse-last-date-received
-set index_format="%4C %Z %{%b %d} %-25.25L (%?l?%4l&%4c?) %s"
+set date_format="!%FT%T%z"
+set index_format="%4C %Z %D %-25.25L (%?l?%4l&%4c?) %s"
+
+## non-threading - be like gmail
+#set sort=reverse-date-sent
+
+## threading - be sane!
+set sort=reverse-threads
+set sort_aux=date-sent
+
 
 # macros
 macro index,pager A "<save-message>=[Gmail]/All%20Mail<enter>"
@@ -36,34 +44,35 @@ macro index,pager A "<save-message>=[Gmail]/All%20Mail<enter>"
 auto_view text/html
 
 # colors
+#
+# color object [ attribute ... ] foreground background [ regexp ]
+# color index [ attribute ... ] foreground background [ pattern ]
+# color compose composeobject [ attribute ... ] foreground background
+# uncolor index pattern [ pattern ... ]
+#
+# Valid objects are: attachment, body, bold, error,  header,  hdrdefault,  index,  indicator,
+#   markers, message, normal, prompt, quoted, quotedN, search, signature, status, tilde, tree, underline.
+# If sidebar is enabled the following objects are also valid: sidebar_divider, sidebar_flagged, sidebar_highlight,
+#   sidebar_indicator,  sidebar_new,  sidebar_spoolfile.
+#
+# The  body and header objects allow you to restrict the colorization to a regular expression.
+# The index object permits you to select colored messages by pattern.
+#
+# Valid composeobjects include header, security_encrypt, security_sign, security_both, security_none.
+#
+# Valid colors include: white, black, green, magenta, blue, cyan, yellow, red, default, colorN.
+#
+# Valid attributes include: none, bold, underline, reverse, and standout.
 
-### the following list of expressions are taken from:
-### https://raw.githubusercontent.com/jessfraz/dockerfiles/master/mutt/.mutt/mutt-patch-highlighting.muttrc
-# Patch syntax highlighting
-##color   normal  white           default
-color   body    brightwhite     default         ^[[:space:]].*
-color   body    yellow          default         ^(diff).*
-#color   body    white           default         ^[\-\-\-].*
-#color   body    white           default         ^[\+\+\+].*
-#color   body    green           default         ^[\+].*
-#color   body    red             default         ^[\-].*
-#color   body    brightblue      default         [@@].*
-color   body    brightwhite     default         ^(\s).*
-color   body    cyan            default         ^(Signed-off-by).*
-color   body    cyan            default         ^(Docker-DCO-1.1-Signed-off-by).*
-color   body    brightwhite     default         ^(Cc)
-color   body    yellow          default         "^diff \-.*"
-color   body    brightwhite     default         "^index [a-f0-9].*"
-color   body    brightblue      default         "^---$"
-color   body    white           default         "^\-\-\- .*"
-color   body    white           default         "^[\+]{3} .*"
-color   body    green           default         "^[\+][^\+]+.*"
-color   body    red             default         "^\-[^\-]+.*"
-color   body    brightblue      default         "^@@ .*"
-color   body    green           default         "LGTM"
-color   body    brightmagenta   default         "-- Commit Summary --"
-color   body    brightmagenta   default         "-- File Changes --"
-color   body    brightmagenta   default         "-- Patch Links --"
-color   body    green           default         "^Merged #.*"
-color   body    red             default         "^Closed #.*"
-color   body    brightblue      default         "^Reply to this email.*"
+## patches
+## ref: https://github.com/jessfraz/dockerfiles/blob/master/mutt/.mutt/mutt-patch-highlighting.muttrc
+color body brightred default ^(Breaking-Change).*
+color body cyan default ^(Signed-off-by).*
+## ref: https://karelzak.blogspot.com/2010/02/highlighted-patches-inside-mutt.html
+color body yellow default "^diff \-.*"
+color body yellow default "^index [a-f0-9].*"
+color body yellow default "^\-\-\- .*"
+color body yellow default "^[\+]{3} .*"
+color body green default "^[\+][^\+]+.*"
+color body red  default "^\-[^\-]+.*"
+color body brightblue default "^@@ .*"
