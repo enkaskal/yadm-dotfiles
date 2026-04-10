@@ -2,11 +2,19 @@
 set realname  = "Stefan Schwoegler"
 set from = "stefan@cryp7.net"
 
+# behavior
+#set mark_old = no # don't mark mail O on exit (i.e. disable N->O flagging)
+set move = yes # move read messages from spoolfile to mbox on exit or mbox-hook
+set pager_stop = yes # disable moving messages when paging (i.e. page-up/down)
+
+# binds/macros
+bind index G imap-fetch-mail
+macro index,pager A "<save-message>=[Gmail]/All%20Mail<enter>"
+
 # receiving config
 set imap_user = "stefan@cryp7.net"
 set imap_authenticators="oauthbearer:xoauth2"
 set imap_oauth_refresh_command="mutt_oauth2.py ${HOME}/.mutt/mutt_oauth2.tokens"
-bind index G imap-fetch-mail
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
@@ -25,8 +33,7 @@ set message_cache_clean = no
 set header_cache = ${HOME}/.mutt/cache/headers
 
 # index config
-set mark_old = no # don't mark mail O on exit (i.e. disable N->O flagging)
-set index_format="%4C %Z %(%FT%T%z) [%4.4c] %-42.42L %s"
+set index_format="%4C %Z %(%FT%T%z) [%4.4c] %-33.33L %s"
 
 ## non-threading - be like gmail
 #set sort=reverse-date-received
@@ -34,9 +41,6 @@ set index_format="%4C %Z %(%FT%T%z) [%4.4c] %-42.42L %s"
 ## threading - be sane!
 set sort=reverse-threads
 set sort_aux=date-received
-
-# macros
-macro index,pager A "<save-message>=[Gmail]/All%20Mail<enter>"
 
 # pager
 auto_view text/html
