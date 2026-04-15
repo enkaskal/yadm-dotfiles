@@ -1,0 +1,2 @@
+set sendmail=/bin/msmtp
+# test: echo "Hello world" | mail -s "msmtp test at `date`" user@example.com

@@ -24,7 +24,8 @@ set trash = "imaps://imap.gmail.com/[Gmail]/Bin"
 # sending config
 set smtp_authenticators=${imap_authenticators}
 set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
-set sendmail = "sendgmail -sender=stefan@cryp7.net"
+#set sendmail = "sendgmail -sender=stefan@cryp7.net"
+set sendmail = "msmtp"
 set copy = no # disable mutt's storing of all sent mail
 
 # caching
