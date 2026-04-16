@@ -29,8 +29,10 @@ set sendmail = "msmtp"
 set copy = no # disable mutt's storing of all sent mail
 
 # caching
-set message_cachedir = ${HOME}/.mutt/cache/messages
+# If set, mutt will clean out obsolete entries from the message cache when the mailbox is synchronized. 
+# You probably only want to set it every once in a while, since it can be a little slow (especially for large folders).
 set message_cache_clean = no
+set message_cachedir = ${HOME}/.mutt/cache/messages
 set header_cache = ${HOME}/.mutt/cache/headers
 
 # index config
