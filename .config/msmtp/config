@@ -35,7 +35,7 @@ domain cryp7.net
 # for it each time you send a mail, but one of the above methods is preferred.
 
 # re-use XOAuth2 from mutt
-passwordeval "mutt_oauth2.py ~/.mutt/mutt_oauth2.tokens"
+passwordeval "mutt_oauth2_keybase.py ~/.mutt/xoauth2.tokens.naclpak"
 
 ## Set a default account
 account default : gapps

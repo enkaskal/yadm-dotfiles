@@ -126,8 +126,6 @@ alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gp!='git push'
 alias yoda='git push --force --all'
-alias ma='mutt_oauth2.py -av ${HOME}/.mutt/mutt_oauth2.tokens'
-alias m='mutt'
 alias burp="java -Djsse.enableSNIExtension=false -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias burp2="java -Djsse.enableSNIExtension=true -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias xmr="monero-wallet-cli --config-file ${HOME}/.bitmonero/monero-wallet-cli.conf --wallet-file"
