@@ -1,5 +1,8 @@
-# disable for now so i can use mutt for imap and mailx for local
-#set sendmail=/bin/msmtp
 # test: echo "Hello world" | mail -s "msmtp test at `date`" user@example.com
+
 # NOTE: may want to install mailcheck and setup a cronjob
 # */10 * * * * mailcheck -c | XDG_RUNTIME_DIR=/run/user/$(id -u) xargs -I{} notify-send --urgency low --wait --app-name mailcheck mailcheck "{}" --icon mail-unread-new
+
+# enable msmtp for sending
+# disable for now so i can use mutt for imap and mailx for local
+#set sendmail=/bin/msmtp
