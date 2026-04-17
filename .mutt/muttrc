@@ -6,10 +6,15 @@ set from = "stefan@cryp7.net"
 #set mark_old = no # don't mark mail O on exit (i.e. disable N->O flagging)
 set move = yes # move read messages from spoolfile to mbox on exit or mbox-hook
 set pager_stop = yes # disable moving messages when paging (i.e. page-up/down)
+set confirmappend = no # don't ask if we're sure we want to move/save messages
+set delete = yes # don't prompt for delete confirmations since we're not actually deleting (see trash below)
 
 # binds/macros
-bind index G imap-fetch-mail
-macro index,pager A "<save-message>=[Gmail]/All%20Mail<enter>"
+bind index,pager G imap-fetch-mail
+bind index,pager r group-chat-reply
+macro index,pager A "<save-message>=[Gmail]/All%20Mail<enter>" "archive message"
+macro index,pager gA "<change-folder>=[Gmail]/All%20Mail<enter>" "goto archive (All Mail)"
+macro index,pager gI "<change-folder>=INBOX<enter>" "goto inbox"
 
 # receiving config
 set imap_user = "stefan@cryp7.net"
