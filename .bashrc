@@ -1,5 +1,8 @@
 # .bashrc
 
+# set umask
+umask 022
+
 # set locales
 export LC_TIME=C
 
@@ -49,12 +52,13 @@ else
   alias pbpaste='xclip -selection clipboard -o'
   #alias pbcopy='xsel --clipboard --input'
   #alias pbpaste='xsel --clipboard --output'
+  alias docker=podman
 
   # mainly for ref...cause i'll never remember this
   alias batstat='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 
   # systemd :/
-  alias journalctl='journalctl --no-pager'
+  #alias journalctl='journalctl --no-pager'
 
   # java
   export JAVA_OPTS="-Xmx4g -Dhttp.nonProxyHosts='localhost|127.*|[::1]' -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=8080 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=8080"
