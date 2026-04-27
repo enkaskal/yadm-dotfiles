@@ -168,10 +168,14 @@ ${RBENV_ROOT}/bin:\
 ${PYENV_ROOT}/bin:\
 ${GOPATH}/bin:\
 ${JAVA_HOME}/bin:\
-/sbin:\
-/usr/sbin:\
 /usr/local/sbin:\
-${PATH}
+/usr/local/bin:\
+/usr/sbin:\
+/usr/bin:\
+/sbin:\
+/bin:\
+/usr/local/games:\
+/usr/games
 
 export MANPATH=${HOME}/man:\
 ${JAVA_HOME}/man:\
