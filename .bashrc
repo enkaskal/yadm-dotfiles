@@ -52,7 +52,6 @@ else
   alias pbpaste='xclip -selection clipboard -o'
   #alias pbcopy='xsel --clipboard --input'
   #alias pbpaste='xsel --clipboard --output'
-  alias docker=podman
 
   # mainly for ref...cause i'll never remember this
   alias batstat='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
