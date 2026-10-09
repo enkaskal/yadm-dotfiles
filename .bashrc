@@ -146,6 +146,10 @@ alias restic='op run --no-masking -- restic'
 alias borg='op run --no-masking -- borg --iec --verbose --progress'
 alias aws='op run --no-masking -- aws'
 
+# hub (hub.github.com | github.com/github/hub) forref
+#eval "$(hub alias -s)"
+#alias git='hub'
+
 #maven
 export MAVEN_OPTS="${JAVA_OPTS}"
 
