@@ -3,11 +3,13 @@ set realname  = "Stefan Schwoegler"
 set from = "stefan@cryp7.net"
 
 # behavior
-#set mark_old = no # don't mark mail O on exit (i.e. disable N->O flagging)
-set move = yes # move read messages from spoolfile to mbox on exit or mbox-hook
+set mark_old = no # don't mark mail O on exit (i.e. disable N->O flagging)
+#set move = yes # move read messages from spoolfile to mbox on exit or mbox-hook
 set pager_stop = yes # disable moving messages when paging (i.e. page-up/down)
-set confirmappend = no # don't ask if we're sure we want to move/save messages
-set delete = yes # don't prompt for delete confirmations since we're not actually deleting (see trash below)
+#set confirmappend = no # don't ask if we're sure we want to move/save messages
+#set delete = yes # don't prompt for delete confirmations since we're not actually deleting (see trash below)
+set copy = no # disable mutt's storing of all sent mail
+
 
 # binds/macros
 bind index,pager G imap-fetch-mail
@@ -19,7 +21,7 @@ macro index,pager gI "<change-folder>=INBOX<enter>" "goto inbox"
 # receiving config
 set imap_user = "stefan@cryp7.net"
 set imap_authenticators="oauthbearer:xoauth2"
-set imap_oauth_refresh_command="mutt_oauth2_keybase.py ${HOME}/.mutt/xoauth2.tokens.naclpak"
+set imap_oauth_refresh_command="mutt_oauth2.py ${HOME}/.mutt/xoauth2.tokens.naclpak"
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
@@ -31,7 +33,6 @@ set smtp_authenticators=${imap_authenticators}
 set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
 #set sendmail = "sendgmail -sender=stefan@cryp7.net"
 set sendmail = "msmtp"
-set copy = no # disable mutt's storing of all sent mail
 
 # caching
 # If set, mutt will clean out obsolete entries from the message cache when the mailbox is synchronized. 
@@ -40,8 +41,9 @@ set message_cache_clean = no
 set message_cachedir = ${HOME}/.mutt/cache/messages
 set header_cache = ${HOME}/.mutt/cache/headers
 
-# index config
+# formatting
 set index_format="%4C %Z %(%FT%T%z) [%4.4c] %-33.33L %s"
+set pager_format="-%Z- %C/%m: %(%FT%T%z) %-33.33L %s%*  -- (%P)"
 
 ## non-threading - be like gmail
 #set sort=reverse-date-received

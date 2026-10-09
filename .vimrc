@@ -1,4 +1,6 @@
 syntax on
+set mouse=
+set ttymouse=
 highlight! link SignColumn LineNr
 filetype plugin indent on
 set nocompatible

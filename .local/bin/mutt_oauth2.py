@@ -44,8 +44,8 @@ import subprocess
 # encryption and decryption pipes you prefer. They should read from standard
 # input and write to standard output. The example values here invoke GPG,
 # although won't work until an appropriate identity appears in the first line.
-ENCRYPTION_PIPE = ['gpg', '--encrypt', '--recipient', 'stefan@cryp7.net']
-DECRYPTION_PIPE = ['gpg', '--decrypt']
+ENCRYPTION_PIPE = ['keybase', 'encrypt', 'enkaskal']
+DECRYPTION_PIPE = ['keybase', 'decrypt']
 
 registrations = {
     'google': {

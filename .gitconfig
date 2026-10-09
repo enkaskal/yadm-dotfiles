@@ -1,5 +1,6 @@
 [alias]
   co = checkout
+  cv = commit -v
   ca = commit -av
   aa = add --all
   a = add
@@ -38,8 +39,7 @@
   defaultBranch = master
 
 [sendemail]
-  smtpServer = sendgmail
-  smtpServerOption = -sender=stefan@cryp7.net
+  smtpServer = msmtp
   annotate = yes
 [pull]
 	rebase = true
