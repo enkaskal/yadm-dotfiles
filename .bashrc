@@ -61,6 +61,9 @@ else
 
   # java
   export JAVA_OPTS="-Xmx4g -Dhttp.nonProxyHosts='localhost|127.*|[::1]' -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=8080 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=8080"
+
+  # tmpdir
+  export TMPDIR="/tmp"
 fi
 
 # EXPORTS
