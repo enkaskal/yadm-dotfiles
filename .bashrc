@@ -9,7 +9,7 @@ export LC_TIME=C
 # get system type
 system_type=$(uname -s)
 
-# User specific aliases and functions
+# term setings
 
 # disable beeps
 #setterm -blength 0
@@ -148,6 +148,10 @@ alias packer='op run --no-masking -- packer'
 alias restic='op run --no-masking -- restic'
 alias borg='op run --no-masking -- borg --iec --verbose --progress'
 alias aws='op run --no-masking -- aws'
+alias prun="podman run --rm --detach"
+alias prunit='podman run --rm -it'
+alias pexec="podman exec -it"
+alias prm="podman rm -fv"
 
 # hub (hub.github.com | github.com/github/hub) forref
 #eval "$(hub alias -s)"
@@ -166,6 +170,9 @@ export PYENV_ROOT=${HOME}/.pyenv
 export GOPATH=${HOME}/src/golang
 export GOPROXY=direct
 
+#node.js
+export NODENV_ROOT=${HOME}/.nodenv
+
 #########
 # PATHs #
 #########
@@ -174,6 +181,7 @@ ${HOME}/.local/bin:\
 ${RBENV_ROOT}/bin:\
 ${PYENV_ROOT}/bin:\
 ${GOPATH}/bin:\
+${NODENV_ROOT}/bin:\
 ${JAVA_HOME}/bin:\
 /usr/local/sbin:\
 /usr/local/bin:\
@@ -202,6 +210,10 @@ fi
 
 if [ -d "${OVFTOOL_HOME}" ]; then
     export PATH=${PATH}:${OVFTOOL_HOME}
+fi
+
+if [ -d "${NODENV_ROOT}" ] ; then
+  eval "$(nodenv init -)"
 fi
 
 ##1p-cli
