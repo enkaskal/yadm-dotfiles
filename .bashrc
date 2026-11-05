@@ -133,6 +133,7 @@ alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gp!='git push'
 alias yoda='git push --force --all'
+alias gsl='git stash list'
 alias burp="java -Djsse.enableSNIExtension=false -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias burp2="java -Djsse.enableSNIExtension=true -jar -Xmx4096m ${HOME}/bin/burp.jar"
 alias xmr="monero-wallet-cli --config-file ${HOME}/.bitmonero/monero-wallet-cli.conf --wallet-file"
@@ -152,6 +153,7 @@ alias prun="podman run --rm --detach"
 alias prunit='podman run --rm -it'
 alias pexec="podman exec -it"
 alias prm="podman rm -fv"
+alias prmi='podman rmi -f $(podman images -f "dangling=true" -q)'
 
 # hub (hub.github.com | github.com/github/hub) forref
 #eval "$(hub alias -s)"
@@ -176,7 +178,8 @@ export NODENV_ROOT=${HOME}/.nodenv
 #########
 # PATHs #
 #########
-export PATH=${HOME}/bin:\
+export PATH=\
+${HOME}/bin:\
 ${HOME}/.local/bin:\
 ${RBENV_ROOT}/bin:\
 ${PYENV_ROOT}/bin:\
@@ -192,11 +195,13 @@ ${JAVA_HOME}/bin:\
 /usr/local/games:\
 /usr/games
 
-export MANPATH=${HOME}/man:\
+export MANPATH=\
+${HOME}/man:\
 ${JAVA_HOME}/man:\
 ${MANPATH}
 
-export LD_LIBRARY_PATH=${HOME}/lib:\
+export LD_LIBRARY_PATH=\
+${HOME}/lib:\
 ${JAVA_HOME}/lib:\
 ${LD_LIBRARY_PATH}
 
@@ -216,12 +221,4 @@ if [ -d "${NODENV_ROOT}" ] ; then
   eval "$(nodenv init -)"
 fi
 
-##1p-cli
-#export OP_HOME=${HOME}/.config/op
-#if [ -f "${OP_HOME}/plugins.sh" ]; then
-#  source ${OP_HOME}/plugins.sh
-#fi
-
-# docker rmi -f $(docker images -f "dangling=true" -q)
-#export PATH="/usr/local/opt/openssl@1.1/bin:$PATH
 #e0f
