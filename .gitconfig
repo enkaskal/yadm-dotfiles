@@ -2,6 +2,7 @@
   co = checkout
   cv = commit -v
   ca = commit -av
+  cam = commit -avm
   aa = add --all
   a = add
   s = status
