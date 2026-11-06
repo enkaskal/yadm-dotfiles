@@ -1,17 +1,25 @@
 [alias]
+  l = log --show-signature
   co = checkout
+  b = branch
+  cob = checkout -b
+  cot = checkout -t
+  com = checkout master
+  a = add
+  aa = add -a
+  s = status
+  sho = show --show-signature
+  d = diff
+  dc = diff --cached
+  p = pull --rebase
   cv = commit -v
   ca = commit -av
-  cam = commit -avm
-  aa = add --all
-  a = add
-  s = status
-  d = diff
-  l = log --show-signature
-  dc = diff --cached
-  sho = show --show-signature
-  caa = commit --amend -av
+  caa = commit -av --amend
+  cm = commit -m
+  cam = commit -am
+  sl = stash list
   se = send-email
+  r = remote -v
 
 [user]
   name = Stefan Schwoegler
