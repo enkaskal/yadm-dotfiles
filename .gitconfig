@@ -6,7 +6,7 @@
   cot = checkout -t
   com = checkout master
   a = add
-  aa = add -a
+  aa = add --all
   s = status
   sho = show --show-signature
   d = diff
