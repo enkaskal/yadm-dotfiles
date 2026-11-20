@@ -110,6 +110,7 @@ export B2_ACCOUNT_KEY="op://Private/cloq7txxk2k4ymrbgjfaqkyywe/secret access key
 
 
 # ALIASES
+alias halt='poweroff'
 alias rebash='source $HOME/.bashrc'
 alias cisco='screen /dev/tty.usbserial-* 9600'
 alias nc='nc -v'
